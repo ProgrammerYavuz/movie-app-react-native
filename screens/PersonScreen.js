@@ -7,6 +7,7 @@ import { styles, theme } from '../theme'
 import MovieList from '../components/movieList';
 import Loading from '../components/loading'
 import { fallbackPersonImage, fetchPersonDetails, fetchPersonMovies, image342 } from '../api/moviedb'
+import GoHome from '../components/goHome'
 
 var {width, height} = Dimensions.get('window'); // cihazın genişlik ve yüksekliğini alır
 const ios = Platform.OS == 'ios';
@@ -40,10 +41,12 @@ export default function PersonScreen() {
     }
 
   return (
-    <ScrollView 
+    <View 
         className="flex-1 bg-slate-900"
         contentContainerStyle={{paddingBottom: 20}}
     >
+    <GoHome/>
+    <ScrollView>
         {/* Geri butonu ve kalp ikonu */}
  
         <SafeAreaView 
@@ -167,6 +170,7 @@ export default function PersonScreen() {
             )
         }
 
-    </ScrollView>
+        </ScrollView>
+    </View>
   )
 }
